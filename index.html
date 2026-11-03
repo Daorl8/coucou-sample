@@ -16,7 +16,7 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#2E4A36" />
+<meta name="theme-color" content="#222221" />
 <link rel="icon" href="favicon.png" type="image/png" />
 <!-- 시안 도메인 = coucou-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 치환 -->
 <script type="application/ld+json">
@@ -43,13 +43,12 @@
 
 :root{
   --paper:#FFFFFF;
-  --mist:#EEF2EC;        /* 정원 테이블에서 뽑은 세이지를 아주 옅게 */
-  --sage:#8DB57E;        /* 장식용 (테이블 실측 141,185,127 근처) */
-  --green:#2E4A36;       /* 버튼 · 푸터 · 강조 (흰 바탕 10:1) */
-  --green-ink:#F4F7F2;
-  --ink:#1F221F;
-  --soft:#5B615A;        /* 6.3:1 */
-  --line:#DCE3D9;
+  --mist:#F2F2F0;        /* 중성 옅은 회색 (v0.1.1: 세이지 → 중성) */
+  --green:#222221;       /* 이름은 유지, 값은 먹색 (버튼 · 푸터 · 강조, 흰 바탕 16:1) */
+  --green-ink:#FAFAF9;
+  --ink:#1F1F1E;
+  --soft:#5C5C5A;        /* 6.6:1 */
+  --line:#DEDEDB;
   --serif:"CC Serif","CC Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --it:"CC Italic","CC Serif",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --sans:"CC Sans",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
@@ -78,7 +77,7 @@ h1,h2,h3,p{ margin:0; }
 .btn{ display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 24px; border:1.5px solid var(--green); border-radius:var(--r); color:var(--green); font-size:.95rem; font-weight:600; transition:background .2s ease, color .2s ease, transform .15s ease; }
 .btn.fill{ background:var(--green); color:var(--green-ink); }
 .btn:active{ transform:scale(.98); }
-@media (hover:hover){ .btn:not(.fill):hover{ background:var(--green); color:var(--green-ink); } .btn.fill:hover{ background:#24392A; border-color:#24392A; } }
+@media (hover:hover){ .btn:not(.fill):hover{ background:var(--green); color:var(--green-ink); } .btn.fill:hover{ background:#000; border-color:#000; } }
 
 /* 헤더 */
 .site-head{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); }
@@ -178,7 +177,7 @@ h1,h2,h3,p{ margin:0; }
 .foot img{ width:150px; margin:0 auto 18px; }
 .foot .name{ font-family:var(--it); font-style:italic; font-size:1.7rem; line-height:1.2; }
 .foot p + p{ margin-top:6px; }
-.foot .muted{ color:#C3D0C2; }
+.foot .muted{ color:#B8B8B5; }
 .foot a{ text-decoration:underline; text-underline-offset:3px; }
 
 /* 모바일 하단 바 (불투명) */
