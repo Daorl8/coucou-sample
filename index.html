@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>COUCOU 꾸꾸 | 경산 브런치 &amp; 디저트 카페</title>
+<meta name="description" content="정원이 보이는 하얀 집, 경산 브런치 & 디저트 카페 꾸꾸. 샌드위치와 오븐 요리, 홀케이크 예약, 구움과자 선물. 경북 경산시 장산로1길 32." />
+<link rel="canonical" href="https://coucou-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="COUCOU 꾸꾸" />
+<meta property="og:title" content="COUCOU 꾸꾸 · 경산 브런치 & 디저트 카페" />
+<meta property="og:description" content="정원이 보이는 하얀 집에서, 천천히 브런치. 홀케이크는 네이버 예약." />
+<meta property="og:url" content="https://coucou-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://coucou-sample.lgt3232.workers.dev/og-coucou.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2E4A36" />
+<link rel="icon" href="favicon.png" type="image/png" />
+<!-- 시안 도메인 = coucou-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "COUCOU 꾸꾸",
+  "url": "https://coucou-sample.lgt3232.workers.dev/",
+  "image": "https://coucou-sample.lgt3232.workers.dev/og-coucou.jpg",
+  "telephone": "+82-70-8064-8511",
+  "servesCuisine": "브런치, 디저트",
+  "address": { "@type": "PostalAddress", "streetAddress": "장산로1길 32", "addressLocality": "경산시", "addressRegion": "경상북도", "addressCountry": "KR" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "17:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/coucou_bakerycafe/"]
+}
+</script>
+<style>
+@font-face{ font-family:"CC Serif"; font-weight:400 700; font-display:swap; src:url("cc-hahmlet.woff2") format("woff2"); }
+@font-face{ font-family:"CC Italic"; font-style:italic; font-weight:400; font-display:swap; src:url("cc-instrument-italic.woff2") format("woff2"); }
+@font-face{ font-family:"CC Sans"; font-weight:400 700; font-display:swap; src:url("cc-pretendard.woff2") format("woff2"); }
+
+:root{
+  --paper:#FFFFFF;
+  --mist:#EEF2EC;        /* 정원 테이블에서 뽑은 세이지를 아주 옅게 */
+  --sage:#8DB57E;        /* 장식용 (테이블 실측 141,185,127 근처) */
+  --green:#2E4A36;       /* 버튼 · 푸터 · 강조 (흰 바탕 10:1) */
+  --green-ink:#F4F7F2;
+  --ink:#1F221F;
+  --soft:#5B615A;        /* 6.3:1 */
+  --line:#DCE3D9;
+  --serif:"CC Serif","CC Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --it:"CC Italic","CC Serif",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --sans:"CC Sans",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --wrap:1160px;
+  --r:3px;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.75; word-break:keep-all; overflow-wrap:break-word; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3,p{ margin:0; }
+:focus-visible{ outline:2px solid var(--green); outline-offset:3px; }
+.wrap{ width:min(100% - 40px, var(--wrap)); margin:0 auto; }
+.sec{ padding:88px 0; }
+@media (min-width:900px){ .sec{ padding:128px 0; } }
+.mist{ background:var(--mist); }
+
+.kicker{ font-family:var(--it); font-style:italic; font-size:1.25rem; line-height:1; color:var(--green); }
+.ko{ font-family:var(--serif); font-style:normal; font-weight:500; font-size:.82em; }
+.h2{ font-family:var(--serif); font-weight:600; font-size:clamp(1.9rem,4.8vw,3rem); line-height:1.3; margin-top:12px; letter-spacing:-.01em; }
+.desc{ margin-top:16px; max-width:34em; color:var(--soft); font-size:1.02rem; }
+.head{ display:grid; gap:4px; margin-bottom:44px; }
+@media (min-width:900px){ .head{ grid-template-columns:1fr 1fr; align-items:end; gap:48px; margin-bottom:56px; } .head .desc{ margin-top:0; justify-self:end; } }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 24px; border:1.5px solid var(--green); border-radius:var(--r); color:var(--green); font-size:.95rem; font-weight:600; transition:background .2s ease, color .2s ease, transform .15s ease; }
+.btn.fill{ background:var(--green); color:var(--green-ink); }
+.btn:active{ transform:scale(.98); }
+@media (hover:hover){ .btn:not(.fill):hover{ background:var(--green); color:var(--green-ink); } .btn.fill:hover{ background:#24392A; border-color:#24392A; } }
+
+/* 헤더 */
+.site-head{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); }
+.site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; }
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand img{ width:54px; }
+.brand b{ font-family:var(--it); font-style:italic; font-weight:400; font-size:1.45rem; line-height:1; }
+.brand small{ font-size:.82rem; font-weight:600; color:var(--soft); }
+.nav{ display:none; gap:28px; font-size:.95rem; font-weight:500; }
+@media (min-width:900px){ .nav{ display:flex; } }
+@media (hover:hover){ .nav a:hover{ color:var(--green); } }
+.head-cta{ min-height:40px; padding:0 16px; font-size:.86rem; }
+@media (max-width:899px){ .head-cta{ display:none; } }
+
+/* 히어로 */
+.hero{ padding:40px 0 72px; }
+@media (min-width:900px){ .hero{ padding:72px 0 120px; } }
+.hero .wrap{ display:grid; gap:36px; align-items:center; }
+@media (min-width:900px){ .hero .wrap{ grid-template-columns:6fr 5fr; gap:72px; } }
+.hero h1{ margin-top:18px; font-family:var(--serif); font-weight:600; font-size:clamp(2.3rem,6.4vw,4.1rem); line-height:1.25; letter-spacing:-.015em; }
+.hero .lead{ margin-top:22px; max-width:28em; color:var(--soft); font-size:1.06rem; }
+.hero .cta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:30px; }
+.hours-mini{ margin-top:28px; display:flex; flex-wrap:wrap; gap:6px 18px; padding-top:18px; border-top:1px solid var(--line); font-size:.92rem; color:var(--soft); }
+.hours-mini b{ color:var(--ink); font-weight:600; margin-right:6px; }
+.hero figure{ margin:0; }
+.hero figure img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); }
+
+/* 이야기 */
+.story .wrap{ display:grid; gap:40px; align-items:center; }
+@media (min-width:900px){ .story .wrap{ grid-template-columns:5fr 6fr; gap:80px; } }
+.story .mark{ width:min(78%, 360px); margin:0 auto; }
+.story p.body{ margin-top:20px; color:var(--soft); font-size:1.04rem; }
+.story p.body + p.body{ margin-top:12px; }
+.story .cups{ margin-top:32px; display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:center; padding-top:24px; border-top:1px solid var(--line); font-size:.93rem; color:var(--soft); }
+.story .cups img{ width:120px; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
+
+/* 사진 카드 공통 */
+.card figure{ margin:0; }
+.card img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); }
+.card figcaption{ margin-top:12px; font-size:.98rem; font-weight:600; }
+.card figcaption span{ display:block; margin-top:2px; font-size:.86rem; font-weight:400; color:var(--soft); }
+
+.grid3{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px 14px; }
+@media (min-width:900px){ .grid3{ grid-template-columns:repeat(3,1fr); gap:44px 24px; } }
+.grid4{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px 14px; }
+@media (min-width:900px){ .grid4{ grid-template-columns:repeat(4,1fr); gap:24px; } }
+
+/* 케이크 예약 */
+.cake-note{ margin-top:40px; display:grid; gap:20px; padding:28px; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); }
+@media (min-width:900px){ .cake-note{ grid-template-columns:1fr auto; align-items:center; padding:32px 36px; } }
+.cake-note h3{ font-family:var(--serif); font-weight:600; font-size:1.3rem; }
+.cake-note p{ margin-top:6px; color:var(--soft); font-size:.96rem; }
+.tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.tags span{ padding:3px 10px; border:1px solid var(--line); border-radius:var(--r); font-size:.8rem; color:var(--soft); }
+
+/* 구움과자 · 선물 */
+.bake .wrap{ display:grid; gap:40px; }
+@media (min-width:900px){ .bake .wrap{ grid-template-columns:4fr 7fr; gap:72px; align-items:start; } .bake .head{ display:block; margin:0; position:sticky; top:110px; } .bake .head .desc{ margin-top:16px; justify-self:auto; } }
+.bake .cta{ margin-top:28px; display:flex; flex-wrap:wrap; gap:8px; }
+.bake .photos{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.bake .photos .card:first-child{ grid-column:1 / -1; }
+.bake .photos .card:first-child img{ aspect-ratio:16/10; }
+@media (min-width:900px){ .bake .photos{ gap:24px; } }
+
+/* 공간 */
+.space-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.space-grid img{ width:100%; height:100%; object-fit:cover; border-radius:var(--r); }
+.space-grid figure{ margin:0; }
+.space-grid .a{ grid-column:1 / -1; aspect-ratio:16/10; }
+.space-grid .b, .space-grid .c{ aspect-ratio:4/5; }
+.space-grid .d{ grid-column:1 / -1; aspect-ratio:16/10; }
+@media (min-width:900px){
+  .space-grid{ grid-template-columns:repeat(12,1fr); grid-auto-rows:150px; gap:24px; }
+  .space-grid .a{ grid-column:1 / 8; grid-row:span 3; aspect-ratio:auto; }
+  .space-grid .b{ grid-column:8 / 13; grid-row:span 3; aspect-ratio:auto; }
+  .space-grid .c{ grid-column:1 / 5; grid-row:span 3; aspect-ratio:auto; }
+  .space-grid .d{ grid-column:5 / 13; grid-row:span 3; aspect-ratio:auto; }
+}
+.space-cap{ margin-top:18px; font-size:.9rem; color:var(--soft); }
+
+/* 오시는 길 */
+.visit .wrap{ display:grid; gap:36px; }
+@media (min-width:900px){ .visit .wrap{ grid-template-columns:5fr 6fr; gap:64px; align-items:start; } }
+.info{ margin:28px 0 0; display:grid; gap:0; }
+.info div{ display:grid; grid-template-columns:76px 1fr; gap:12px; padding:16px 0; border-top:1px solid var(--line); }
+.info div:last-child{ border-bottom:1px solid var(--line); }
+.info dt{ font-weight:600; }
+.info dd{ margin:0; color:var(--soft); }
+.info dd small{ display:block; margin-top:4px; font-size:.88rem; }
+.hours{ display:grid; grid-template-columns:auto 1fr; gap:2px 14px; font-variant-numeric:tabular-nums; }
+.visit .cta{ margin-top:24px; display:flex; flex-wrap:wrap; gap:8px; }
+.map{ width:100%; aspect-ratio:4/3; border:0; border-radius:var(--r); background:var(--mist); }
+
+/* 푸터 */
+.foot{ background:var(--green); color:var(--green-ink); text-align:center; padding:56px 0 calc(110px + env(safe-area-inset-bottom)); font-size:.88rem; }
+@media (min-width:900px){ .foot{ padding:72px 0; } }
+.foot img{ width:150px; margin:0 auto 18px; }
+.foot .name{ font-family:var(--it); font-style:italic; font-size:1.7rem; line-height:1.2; }
+.foot p + p{ margin-top:6px; }
+.foot .muted{ color:#C3D0C2; }
+.foot a{ text-decoration:underline; text-underline-offset:3px; }
+
+/* 모바일 하단 바 (불투명) */
+.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:#FFFFFF; border-top:1px solid var(--line); }
+.quick a{ display:flex; align-items:center; justify-content:center; min-height:48px; border:1.5px solid var(--green); border-radius:var(--r); color:var(--green); font-size:.88rem; font-weight:600; background:#FFFFFF; }
+.quick a.fill{ background:var(--green); color:var(--green-ink); }
+@media (min-width:900px){ .quick{ display:none; } }
+
+/* 리빌: setInterval 구동 */
+.js .reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); transition-delay:var(--d,0s); }
+.js .reveal.in{ opacity:1; transform:none; }
+@media print{ .js .reveal{ opacity:1; transform:none; } }
+</style>
+<noscript><style>.reveal{ opacity:1 !important; transform:none !important; }</style></noscript>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="꾸꾸 처음으로"><img src="cc-cats.webp" alt="" width="640" height="431" /><b>coucou</b><small>꾸꾸</small></a>
+    <nav class="nav" aria-label="주요 메뉴"><a href="#brunch">브런치</a><a href="#cake">케이크 예약</a><a href="#bake">구움과자 · 선물</a><a href="#space">공간</a><a href="#visit">오시는 길</a></nav>
+    <a class="btn fill head-cta" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">케이크 예약</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">Brunch &amp; Dessert Cafe · <span class="ko">경산</span></p>
+        <h1>정원이 보이는 하얀 집에서,<br />천천히 브런치</h1>
+        <p class="lead">화려함보다는 본연의 맛과 기본에 충실한 태도를 담아냅니다. 샌드위치와 오븐 요리, 제철 과일을 올린 케이크까지.</p>
+        <div class="cta">
+          <a class="btn fill" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">홀케이크 예약</a>
+          <a class="btn" href="#visit">오시는 길</a>
+        </div>
+        <p class="hours-mini"><span><b>화~토</b>10:00 ~ 19:00</span><span><b>일</b>10:00 ~ 17:00</span><span><b>월</b>정기휴무</span></p>
+      </div>
+      <figure class="reveal"><img src="cc-house.webp" alt="담장 너머 정원과 하얀 단층집 외관" width="1080" height="1440" fetchpriority="high" /></figure>
+    </div>
+  </section>
+
+  <section class="sec mist story" id="story" aria-labelledby="story-h">
+    <div class="wrap">
+      <img class="mark reveal" src="cc-logo.webp" alt="꾸꾸 로고. 지붕 아래 케이크와 빵, 커피를 든 고양이 두 마리" width="560" height="524" loading="lazy" />
+      <div class="reveal">
+        <p class="kicker">Our Story</p>
+        <h2 id="story-h" class="h2">매일 찾아오고 싶은<br />일상의 작은 행복</h2>
+        <p class="body">꾸꾸는 편안하고 정겨운 공간에서 시작되었습니다. 화려함보다는 본연의 맛과 기본에 충실한 태도를 담아냅니다.</p>
+        <p class="body">정성껏 준비한 음식과 디저트, 음료를 통해 매일 찾아오고 싶은 일상의 작은 행복을 선물합니다. 단순한 한 끼를 넘어 꾸꾸에서 따뜻하고 즐거운 시간을 경험해 보세요.</p>
+        <div class="cups"><img src="cc-cups.webp" alt="고양이 로고가 그려진 꾸꾸 테이크아웃 컵" width="900" height="1200" loading="lazy" /><p>중산동에서 시작한 꾸꾸가 정원이 있는 집으로 자리를 옮겼어요. 로고 속 두 고양이는 컵과 포장지에도 함께합니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="brunch" aria-labelledby="brunch-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="kicker">Brunch</p><h2 id="brunch-h" class="h2">천천히 먹는 한 접시</h2></div>
+        <p class="desc">구운 빵 사이에 채소를 듬뿍 넣은 샌드위치, 오븐에서 바로 꺼낸 요리, 제철 과일을 올린 플레이트. 커피 한 잔과 함께 느긋하게.</p>
+      </div>
+      <div class="grid3">
+        <figure class="card reveal"><img src="cc-sand.webp" alt="햄과 채소를 넣은 샌드위치와 아이스 음료" width="900" height="1200" loading="lazy" /><figcaption>샌드위치<span>구운 빵에 햄과 채소를 듬뿍</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-toast.webp" alt="무화과를 올린 토스트와 과일 볼, 말차 아이스크림이 놓인 쟁반" width="900" height="1200" loading="lazy" /><figcaption>무화과 토스트 플레이트<span>과일 볼, 말차 아이스크림과 함께</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-gratin.webp" alt="노른자를 올려 구운 오븐 요리와 바게트" width="900" height="1200" loading="lazy" /><figcaption>오븐 요리<span>구운 바게트를 곁들여</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-bowl.webp" alt="무화과와 청포도를 담은 나무 볼" width="900" height="1200" loading="lazy" /><figcaption>제철 과일 볼<span>무화과와 청포도</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-soup.webp" alt="구운 단호박을 올린 노란 수프와 바게트" width="900" height="1200" loading="lazy" /><figcaption>단호박 수프<span>바게트와 함께</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-drinks.webp" alt="정원 테이블 위의 라떼와 층이 나뉜 과일 음료" width="900" height="1200" loading="lazy" /><figcaption>커피와 음료<span>정원 테이블에서 한 잔</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mist" id="cake" aria-labelledby="cake-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="kicker">Whole Cake</p><h2 id="cake-h" class="h2">홀케이크 예약</h2></div>
+        <p class="desc">제철 과일을 아낌없이 올린 꾸꾸의 홀케이크. 네이버 예약으로 미리 받아 두면, 원하는 날 매장에서 찾아가실 수 있어요.</p>
+      </div>
+      <div class="grid4">
+        <figure class="card reveal"><img src="cc-cake-fig.webp" alt="무화과와 타임을 올린 하얀 케이크" width="900" height="1200" loading="lazy" /><figcaption>무화과 케이크</figcaption></figure>
+        <figure class="card reveal"><img src="cc-cake-fruit.webp" alt="단면에 과일이 보이는 과일 케이크" width="900" height="1200" loading="lazy" /><figcaption>과일 케이크</figcaption></figure>
+        <figure class="card reveal"><img src="cc-cake-straw.webp" alt="딸기를 가득 올린 딸기 케이크" width="900" height="1200" loading="lazy" /><figcaption>딸기 케이크</figcaption></figure>
+        <figure class="card reveal"><img src="cc-cake-melon.webp" alt="멜론을 올린 원통형 케이크" width="900" height="1200" loading="lazy" /><figcaption>멜론 케이크</figcaption></figure>
+      </div>
+      <div class="cake-note reveal">
+        <div>
+          <h3>네이버에서 예약해 주세요</h3>
+          <p>케이크는 과일 수급과 재료에 따라 예약이 안 될 수도 있어요. 예약창에 노출된 케이크만 예약 가능합니다.</p>
+          <div class="tags"><span>선결제</span><span>바로 확정</span><span>매주 월요일 휴무</span></div>
+        </div>
+        <a class="btn fill" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">홀케이크 예약하기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec bake" id="bake" aria-labelledby="bake-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">Bake &amp; Gift</p>
+        <h2 id="bake-h" class="h2">구움과자와 선물</h2>
+        <p class="desc">매장에서 구운 에그타르트와 휘낭시에. 리본을 묶은 상자에 담아 선물하기 좋아요. 단체 주문은 전화로 먼저 문의해 주세요.</p>
+        <div class="cta"><a class="btn" href="tel:07080648511">단체 주문 문의</a></div>
+      </div>
+      <div class="photos">
+        <figure class="card reveal"><img src="cc-tart.webp" alt="식힘망 위에 놓인 에그타르트" width="900" height="1200" loading="lazy" /><figcaption>에그타르트</figcaption></figure>
+        <figure class="card reveal"><img src="cc-fin.webp" alt="견과를 올려 구운 휘낭시에가 줄지어 놓인 모습" width="900" height="1200" loading="lazy" /><figcaption>휘낭시에</figcaption></figure>
+        <figure class="card reveal"><img src="cc-gift.webp" alt="Thank you 리본으로 묶은 구움과자 상자" width="900" height="1125" loading="lazy" /><figcaption>선물 포장<span>리본을 묶은 구움과자 상자</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mist" id="space" aria-labelledby="space-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="kicker">Garden House</p><h2 id="space-h" class="h2">정원이 있는 집</h2></div>
+        <p class="desc">담장 안쪽으로 들어서면 작은 정원과 초록 테이블. 창가 자리에서는 바깥 나무가 내다보여요.</p>
+      </div>
+      <div class="space-grid">
+        <figure class="a reveal"><img src="cc-garden.webp" alt="벽돌 담 앞 초록 원형 테이블과 의자" width="900" height="1200" loading="lazy" /></figure>
+        <figure class="b reveal"><img src="cc-path.webp" alt="하얀 집 옆 붉은 댑싸리가 늘어선 길" width="900" height="1200" loading="lazy" /></figure>
+        <figure class="c reveal"><img src="cc-room.webp" alt="나무 천장 아래 창가 자리" width="640" height="1136" loading="lazy" /></figure>
+        <figure class="d reveal"><img src="cc-night.webp" alt="불이 켜진 밤의 꾸꾸 외관과 WELCOME 간판" width="900" height="1200" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec visit" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">Visit</p>
+        <h2 id="visit-h" class="h2">오시는 길</h2>
+        <dl class="info">
+          <div><dt>주소</dt><dd>경북 경산시 장산로1길 32<small>대경경산역 2번 출구에서 381m</small></dd></div>
+          <div><dt>찾는 법</dt><dd>경산역 뒤편에서 차로 2분, 걸어서 10분 이내. 삼성현로에서는 '더반(한정식)' 방면으로 쭉 내려오세요.<small>내비게이션에 주소를 검색하시면 가장 정확해요.</small></dd></div>
+          <div><dt>영업시간</dt><dd><span class="hours"><span>화~토</span><span>10:00 ~ 19:00</span><span>일</span><span>10:00 ~ 17:00</span><span>월</span><span>정기휴무</span></span></dd></div>
+          <div><dt>전화</dt><dd><a href="tel:07080648511">070-8064-8511</a></dd></div>
+        </dl>
+        <div class="cta">
+          <a class="btn fill" href="https://map.naver.com/p/entry/place/1326613374" target="_blank" rel="noopener">네이버 길찾기</a>
+          <a class="btn" href="https://www.instagram.com/coucou_bakerycafe/" target="_blank" rel="noopener">인스타그램</a>
+        </div>
+      </div>
+      <iframe class="map reveal" title="꾸꾸 위치 지도" src="https://www.google.com/maps?q=%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%82%B0%EC%8B%9C%20%EC%9E%A5%EC%82%B0%EB%A1%9C1%EA%B8%B8%2032%20%EA%BE%B8%EA%BE%B8&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="cc-cats-w.webp" alt="" width="640" height="431" loading="lazy" />
+    <p class="name">coucou <span class="ko">꾸꾸</span></p>
+    <p class="muted">brunch &amp; dessert cafe</p>
+    <p>경북 경산시 장산로1길 32 · 070-8064-8511 · <a href="https://www.instagram.com/coucou_bakerycafe/" target="_blank" rel="noopener">@coucou_bakerycafe</a></p>
+    <p class="muted">© COUCOU</p>
+  </div>
+</footer>
+
+<div class="quick" aria-label="빠른 연결">
+  <a class="fill" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">케이크 예약</a>
+  <a href="tel:07080648511">전화</a>
+  <a href="https://map.naver.com/p/entry/place/1326613374" target="_blank" rel="noopener">길찾기</a>
+</div>
+
+<script>
+(function(){
+  /* 리빌 */
+  var pending=[].slice.call(document.querySelectorAll('.reveal'));
+  pending.forEach(function(el){
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){ return c.classList.contains('reveal'); });
+    if(sib.length>1 && !el.style.getPropertyValue('--d')){ el.style.setProperty('--d',(Math.min(sib.indexOf(el),4)*0.06)+'s'); }
+  });
+  var t=setInterval(function(){
+    if(!pending.length){ clearInterval(t); return; }
+    if(window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4){
+      pending.forEach(function(el){ el.classList.add('in'); }); pending=[]; return;
+    }
+    var line=window.innerHeight*0.92;
+    pending=pending.filter(function(el){
+      if(el.getBoundingClientRect().top < line){ el.classList.add('in'); return false; }
+      return true;
+    });
+  },120);
+  /* 앵커 스크롤 */
+  var head=document.querySelector('.site-head');
+  [].forEach.call(document.querySelectorAll('a[href^="#"]'),function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href'); var el=id==='#top'?document.body:document.querySelector(id);
+      if(!el) return; e.preventDefault();
+      var start=window.pageYOffset, end=id==='#top'?0:el.getBoundingClientRect().top+start-head.offsetHeight+1;
+      var t0=Date.now(), dur=520;
+      var iv=setInterval(function(){
+        var p=Math.min((Date.now()-t0)/dur,1), e2=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+        window.scrollTo(0,start+(end-start)*e2);
+        if(p>=1) clearInterval(iv);
+      },16);
+    });
+  });
+})();
+</script>
+</body>
+</html>
