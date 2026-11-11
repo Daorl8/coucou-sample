@@ -89,6 +89,11 @@ h1,h2,h3,p{ margin:0; }
 .nav{ display:none; gap:28px; font-size:.95rem; font-weight:500; }
 @media (min-width:900px){ .nav{ display:flex; } }
 @media (hover:hover){ .nav a:hover{ color:var(--green); } }
+@media (min-width:900px){
+  .site-head .wrap{ display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); }
+  .site-head .brand{ justify-self:start; }
+  .site-head .head-cta{ justify-self:end; }
+}
 .head-cta{ min-height:40px; padding:0 16px; font-size:.86rem; }
 @media (max-width:899px){ .head-cta{ display:none; } }
 
@@ -124,7 +129,12 @@ h1,h2,h3,p{ margin:0; }
 
 .grid3{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 14px; }
 @media (min-width:900px){ .grid3{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:44px 24px; } }
-.brunch-note{ display:block; margin-top:10px; color:var(--ink); font-weight:600; font-size:.95rem; }
+.brunch-note{ margin-top:12px; color:var(--ink); font-weight:600; font-size:.95rem; }
+/* 모바일: 브런치 1열 (사진이 너무 작아지지 않게) */
+@media (max-width:599px){
+  .grid3{ grid-template-columns:minmax(0,1fr); gap:32px; }
+  .grid3 .card img{ aspect-ratio:4/3; }
+}
 
 /* 커피 (먹색 섹션) */
 .coffee{ background:var(--green); color:var(--green-ink); }
@@ -138,10 +148,12 @@ h1,h2,h3,p{ margin:0; }
 @media (min-width:900px){ .coffee-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; } .coffee-grid figure:first-child{ grid-column:auto; } .coffee-grid figure:first-child img{ aspect-ratio:4/5; } }
 
 /* 홀케이크 사진 9장 */
-.cake-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+.cake-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
 .cake-grid figure{ margin:0; }
 .cake-grid img{ width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
-@media (min-width:900px){ .cake-grid{ gap:16px; } }
+.cake-grid figure:first-child{ grid-column:1 / -1; }
+.cake-grid figure:first-child img{ aspect-ratio:4/3; }
+@media (min-width:900px){ .cake-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; } .cake-grid figure:first-child{ grid-column:auto; } .cake-grid figure:first-child img{ aspect-ratio:1; } }
 
 /* 케이크 예약 */
 .cake-note{ margin-top:40px; display:grid; gap:20px; padding:28px; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); }
@@ -246,8 +258,6 @@ h1,h2,h3,p{ margin:0; }
       <div class="reveal">
         <p class="kicker">Our Story</p>
         <h2 id="story-h" class="h2">매일 찾아오고 싶은<br />일상의 작은 행복</h2>
-        <p class="body">꾸꾸는 편안하고 정겨운 공간에서 시작됐어요. 화려함보다는 본연의 맛과 기본에 충실한 태도를 담아냅니다.</p>
-        <p class="body">정성껏 준비한 음식과 디저트, 음료를 통해 매일 찾아오고 싶은 일상의 작은 행복을 선물합니다. 단순한 한 끼를 넘어 꾸꾸에서 따뜻하고 즐거운 시간을 경험해 보세요.</p>
         <div class="cups">
           <div class="pics"><img src="cc-cups.webp" alt="고양이 로고가 그려진 꾸꾸 테이크아웃 컵" width="900" height="1200" loading="lazy" /><img src="cc-mycats.webp" alt="창밖을 함께 바라보는 고양이 두 마리의 뒷모습" width="843" height="1124" loading="lazy" /></div>
           <p>옥곡동과 중산동 매장에서 많은 사랑을 받으며 꾸꾸만의 시간을 쌓아왔어요. 그리고 9월 10일, 지금의 따뜻한 하얀 집으로 새로운 공간을 열었습니다.</p>
@@ -260,8 +270,8 @@ h1,h2,h3,p{ margin:0; }
   <section class="sec" id="brunch" aria-labelledby="brunch-h">
     <div class="wrap">
       <div class="head reveal">
-        <div><p class="kicker">Brunch</p><h2 id="brunch-h" class="h2">브런치</h2></div>
-        <p class="desc">꾸꾸의 브런치는 빵부터 직접 만듭니다. 샌드위치에 사용하는 슬랩브레드부터 피자 도우와 소스, 케이크 시트와 디저트까지 하나하나 정성껏 직접 만들어요. 좋은 재료와 정성을 담아 꾸꾸만의 맛을 선보입니다.<span class="brunch-note">브런치 주문 마감 화~목 오후 4시 · 금~일 오후 6시</span></p>
+        <div><p class="kicker">Brunch</p><h2 id="brunch-h" class="h2">브런치</h2><p class="brunch-note">브런치 주문 마감 화~목 오후 4시 · 금~일 오후 6시</p></div>
+        <p class="desc">꾸꾸의 브런치는 빵부터 직접 만듭니다. 샌드위치에 사용하는 슬랩브레드부터 피자 도우와 소스, 케이크 시트와 디저트까지 하나하나 정성껏 직접 만들어요. 좋은 재료와 정성을 담아 꾸꾸만의 맛을 선보입니다.</p>
       </div>
       <div class="grid3">
         <figure class="card reveal"><img src="cc-pizza.webp" alt="치즈가 노릇하게 녹은 수제 피자 조각" width="843" height="1124" loading="lazy" /><figcaption>수제피자<span>직접 만든 도우와 수제 소스로 구워낸 꾸꾸만의 피자</span></figcaption></figure>
