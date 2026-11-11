@@ -30,8 +30,7 @@
   "servesCuisine": "브런치, 디저트",
   "address": { "@type": "PostalAddress", "streetAddress": "장산로1길 32", "addressLocality": "경산시", "addressRegion": "경상북도", "addressCountry": "KR" },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "19:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "17:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "10:00", "closes": "21:00" }
   ],
   "sameAs": ["https://www.instagram.com/coucou_bakerycafe/"]
 }
@@ -112,8 +111,10 @@ h1,h2,h3,p{ margin:0; }
 .story .mark{ width:min(78%, 360px); margin:0 auto; }
 .story p.body{ margin-top:20px; color:var(--soft); font-size:1.04rem; }
 .story p.body + p.body{ margin-top:12px; }
-.story .cups{ margin-top:32px; display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:center; padding-top:24px; border-top:1px solid var(--line); font-size:.93rem; color:var(--soft); }
-.story .cups img{ width:120px; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
+.story .cups{ margin-top:32px; padding-top:24px; border-top:1px solid var(--line); font-size:.95rem; color:var(--soft); }
+.story .cups .pics{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; max-width:340px; margin-bottom:18px; }
+.story .cups img{ width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
+.story .cups p + p{ margin-top:10px; }
 
 /* 사진 카드 공통 */
 .card figure{ margin:0; }
@@ -121,10 +122,26 @@ h1,h2,h3,p{ margin:0; }
 .card figcaption{ margin-top:12px; font-size:.98rem; font-weight:600; }
 .card figcaption span{ display:block; margin-top:2px; font-size:.86rem; font-weight:400; color:var(--soft); }
 
-.grid3{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px 14px; }
-@media (min-width:900px){ .grid3{ grid-template-columns:repeat(3,1fr); gap:44px 24px; } }
-.grid4{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px 14px; }
-@media (min-width:900px){ .grid4{ grid-template-columns:repeat(4,1fr); gap:24px; } }
+.grid3{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 14px; }
+@media (min-width:900px){ .grid3{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:44px 24px; } }
+.brunch-note{ display:block; margin-top:10px; color:var(--ink); font-weight:600; font-size:.95rem; }
+
+/* 커피 (먹색 섹션) */
+.coffee{ background:var(--green); color:var(--green-ink); }
+.coffee .kicker{ color:#D6D6D3; }
+.coffee .desc{ color:#C9C9C6; }
+.coffee-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.coffee-grid figure{ margin:0; }
+.coffee-grid img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); }
+.coffee-grid figure:first-child{ grid-column:1 / -1; }
+.coffee-grid figure:first-child img{ aspect-ratio:16/11; }
+@media (min-width:900px){ .coffee-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; } .coffee-grid figure:first-child{ grid-column:auto; } .coffee-grid figure:first-child img{ aspect-ratio:4/5; } }
+
+/* 홀케이크 사진 9장 */
+.cake-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+.cake-grid figure{ margin:0; }
+.cake-grid img{ width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
+@media (min-width:900px){ .cake-grid{ gap:16px; } }
 
 /* 케이크 예약 */
 .cake-note{ margin-top:40px; display:grid; gap:20px; padding:28px; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); }
@@ -138,24 +155,26 @@ h1,h2,h3,p{ margin:0; }
 .bake .wrap{ display:grid; gap:40px; }
 @media (min-width:900px){ .bake .wrap{ grid-template-columns:4fr 7fr; gap:72px; align-items:start; } .bake .head{ display:block; margin:0; position:sticky; top:110px; } .bake .head .desc{ margin-top:16px; justify-self:auto; } }
 .bake .cta{ margin-top:28px; display:flex; flex-wrap:wrap; gap:8px; }
-.bake .photos{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.bake .photos{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
 .bake .photos .card:first-child{ grid-column:1 / -1; }
 .bake .photos .card:first-child img{ aspect-ratio:16/10; }
 @media (min-width:900px){ .bake .photos{ gap:24px; } }
 
 /* 공간 */
-.space-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.space-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
 .space-grid img{ width:100%; height:100%; object-fit:cover; border-radius:var(--r); }
 .space-grid figure{ margin:0; }
 .space-grid .a{ grid-column:1 / -1; aspect-ratio:16/10; }
-.space-grid .b, .space-grid .c{ aspect-ratio:4/5; }
+.space-grid .b, .space-grid .c, .space-grid .e, .space-grid .f{ aspect-ratio:4/5; }
 .space-grid .d{ grid-column:1 / -1; aspect-ratio:16/10; }
 @media (min-width:900px){
-  .space-grid{ grid-template-columns:repeat(12,1fr); grid-auto-rows:150px; gap:24px; }
+  .space-grid{ grid-template-columns:repeat(12,minmax(0,1fr)); grid-auto-rows:150px; gap:24px; }
   .space-grid .a{ grid-column:1 / 8; grid-row:span 3; aspect-ratio:auto; }
   .space-grid .b{ grid-column:8 / 13; grid-row:span 3; aspect-ratio:auto; }
   .space-grid .c{ grid-column:1 / 5; grid-row:span 3; aspect-ratio:auto; }
   .space-grid .d{ grid-column:5 / 13; grid-row:span 3; aspect-ratio:auto; }
+  .space-grid .e{ grid-column:1 / 7; grid-row:span 3; aspect-ratio:auto; }
+  .space-grid .f{ grid-column:7 / 13; grid-row:span 3; aspect-ratio:auto; }
 }
 .space-cap{ margin-top:18px; font-size:.9rem; color:var(--soft); }
 
@@ -199,7 +218,7 @@ h1,h2,h3,p{ margin:0; }
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="꾸꾸 처음으로"><img src="cc-cats.webp" alt="" width="640" height="431" /><b>coucou</b><small>꾸꾸</small></a>
-    <nav class="nav" aria-label="주요 메뉴"><a href="#brunch">브런치</a><a href="#cake">케이크 예약</a><a href="#bake">디저트 및 선물</a><a href="#space">내외부 공간</a><a href="#visit">오시는 길</a></nav>
+    <nav class="nav" aria-label="주요 메뉴"><a href="#brunch">브런치</a><a href="#coffee">커피</a><a href="#cake">케이크 예약</a><a href="#bake">디저트 및 선물</a><a href="#space">내외부 공간</a><a href="#visit">오시는 길</a></nav>
     <a class="btn fill head-cta" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">케이크 예약</a>
   </div>
 </header>
@@ -215,7 +234,7 @@ h1,h2,h3,p{ margin:0; }
           <a class="btn fill" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">홀케이크 예약</a>
           <a class="btn" href="#visit">오시는 길</a>
         </div>
-        <p class="hours-mini"><span><b>화~토</b>10:00 ~ 19:00</span><span><b>일</b>10:00 ~ 17:00</span><span><b>월</b>정기휴무</span></p>
+        <p class="hours-mini"><span><b>화~일</b>10:00 ~ 21:00</span><span><b>월</b>정기휴무</span></p>
       </div>
       <figure class="reveal"><img src="cc-house.webp" alt="담장 너머 정원과 하얀 단층집 외관" width="1080" height="1440" fetchpriority="high" /></figure>
     </div>
@@ -229,7 +248,11 @@ h1,h2,h3,p{ margin:0; }
         <h2 id="story-h" class="h2">매일 찾아오고 싶은<br />일상의 작은 행복</h2>
         <p class="body">꾸꾸는 편안하고 정겨운 공간에서 시작됐어요. 화려함보다는 본연의 맛과 기본에 충실한 태도를 담아냅니다.</p>
         <p class="body">정성껏 준비한 음식과 디저트, 음료를 통해 매일 찾아오고 싶은 일상의 작은 행복을 선물합니다. 단순한 한 끼를 넘어 꾸꾸에서 따뜻하고 즐거운 시간을 경험해 보세요.</p>
-        <div class="cups"><img src="cc-cups.webp" alt="고양이 로고가 그려진 꾸꾸 테이크아웃 컵" width="900" height="1200" loading="lazy" /><p>중산동 매장에서 많은 사랑을 받고, 9월 10일 지금의 하얀 집으로 확장 이전했어요. 로고 속 두 고양이는 컵과 포장지에도 함께하고 있어요.</p></div>
+        <div class="cups">
+          <div class="pics"><img src="cc-cups.webp" alt="고양이 로고가 그려진 꾸꾸 테이크아웃 컵" width="900" height="1200" loading="lazy" /><img src="cc-mycats.webp" alt="창밖을 함께 바라보는 고양이 두 마리의 뒷모습" width="843" height="1124" loading="lazy" /></div>
+          <p>옥곡동과 중산동 매장에서 많은 사랑을 받으며 꾸꾸만의 시간을 쌓아왔어요. 그리고 9월 10일, 지금의 따뜻한 하얀 집으로 새로운 공간을 열었습니다.</p>
+          <p>꾸꾸의 로고 속 두 고양이는 실제로 제가 함께 살아가는 소중한 고양이들이에요. 꾸꾸의 시작부터 지금까지, 작은 로고 안에 특별한 이야기를 담아 함께하고 있습니다.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -238,15 +261,29 @@ h1,h2,h3,p{ margin:0; }
     <div class="wrap">
       <div class="head reveal">
         <div><p class="kicker">Brunch</p><h2 id="brunch-h" class="h2">브런치</h2></div>
-        <p class="desc">샌드위치부터 오븐 요리, 제철 과일을 올린 플레이트. 브런치는 화~토 오후 4시, 일요일 오후 3시까지 주문 받아요.</p>
+        <p class="desc">꾸꾸의 브런치는 빵부터 직접 만듭니다. 샌드위치에 사용하는 슬랩브레드부터 피자 도우와 소스, 케이크 시트와 디저트까지 하나하나 정성껏 직접 만들어요. 좋은 재료와 정성을 담아 꾸꾸만의 맛을 선보입니다.<span class="brunch-note">브런치 주문 마감 화~목 오후 4시 · 금~일 오후 6시</span></p>
       </div>
       <div class="grid3">
-        <figure class="card reveal"><img src="cc-sand.webp" alt="햄과 채소를 넣은 샌드위치와 아이스 음료" width="900" height="1200" loading="lazy" /><figcaption>샌드위치<span>구운 빵에 햄과 채소를 듬뿍</span></figcaption></figure>
-        <figure class="card reveal"><img src="cc-toast.webp" alt="무화과를 올린 토스트와 과일 볼, 말차 아이스크림이 놓인 쟁반" width="900" height="1200" loading="lazy" /><figcaption>무화과 토스트 플레이트<span>과일 볼, 말차 아이스크림과 함께</span></figcaption></figure>
-        <figure class="card reveal"><img src="cc-gratin.webp" alt="노른자를 올려 구운 오븐 요리와 바게트" width="900" height="1200" loading="lazy" /><figcaption>오븐 요리<span>구운 바게트를 곁들여</span></figcaption></figure>
-        <figure class="card reveal"><img src="cc-bowl.webp" alt="무화과와 청포도를 담은 나무 볼" width="900" height="1200" loading="lazy" /><figcaption>제철 과일 볼<span>무화과와 청포도</span></figcaption></figure>
-        <figure class="card reveal"><img src="cc-soup.webp" alt="구운 단호박을 올린 노란 수프와 바게트" width="900" height="1200" loading="lazy" /><figcaption>단호박 수프<span>바게트와 함께</span></figcaption></figure>
-        <figure class="card reveal"><img src="cc-drinks.webp" alt="정원 테이블 위의 라떼와 층이 나뉜 과일 음료" width="900" height="1200" loading="lazy" /><figcaption>커피와 음료<span>정원 테이블에서 한 잔</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-pizza.webp" alt="치즈가 노릇하게 녹은 수제 피자 조각" width="843" height="1124" loading="lazy" /><figcaption>수제피자<span>직접 만든 도우와 수제 소스로 구워낸 꾸꾸만의 피자</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-sand.webp" alt="슬랩브레드에 햄과 채소를 넣은 샌드위치와 아이스 음료" width="900" height="1200" loading="lazy" /><figcaption>샌드위치<span>직접 구운 슬랩브레드에 신선한 재료를 듬뿍 담아낸 샌드위치</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-gratin.webp" alt="노른자와 치즈를 올린 샥슈카와 구운 바게트" width="900" height="1200" loading="lazy" /><figcaption>샥슈카<span>매콤한 토마토소스에 노른자와 치즈가 올라간 따뜻한 스튜</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-soup.webp" alt="구운 단호박을 올린 노란 수프와 바게트" width="900" height="1200" loading="lazy" /><figcaption>이달의 수프<span>제철 재료로 정성껏 끓여낸 따뜻한 수프</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-bowl.webp" alt="그래놀라를 올린 그릭요거트와 무화과, 청포도를 담은 나무 볼" width="900" height="1200" loading="lazy" /><figcaption>그릭요거트<span>직접 구운 그래놀라와 신선한 제철 과일을 곁들인 꾸덕한 그릭요거트</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-toast.webp" alt="리코타 치즈와 무화과를 올린 오픈 샌드위치와 과일 볼" width="900" height="1200" loading="lazy" /><figcaption>오픈리코타과일샌드위치<span>부드러운 리코타 치즈와 제철 과일의 산뜻한 만남</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec coffee" id="coffee" aria-labelledby="coffee-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="kicker">Coffee</p><h2 id="coffee-h" class="h2">커피</h2></div>
+        <p class="desc">'꾸꾸'의 커피는 작은 오차도 허용하지 않는 세심한 계량에서 시작됩니다. 저울 위에서 정성스레 흐르는 시간과 무게는 '꾸꾸'의 평범한 일상이자, 찾아주시는 모든 분들께 온전한 한 잔을 대접하기 위한 약속입니다. 바쁜 일상 속, 우리의 커피와 함께 발걸음이 한결 가벼워지시기를 바랍니다.</p>
+      </div>
+      <div class="coffee-grid">
+        <figure class="reveal"><img src="cc-coffee-1.webp" alt="포터필터 안의 원두 가루를 고르게 저어 주는 모습" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-coffee-2.webp" alt="저울 위에 올린 원두 가루가 담긴 포터필터" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-coffee-3.webp" alt="저울 위 잔으로 에스프레소가 추출되는 모습" width="843" height="1124" loading="lazy" /></figure>
       </div>
     </div>
   </section>
@@ -257,11 +294,16 @@ h1,h2,h3,p{ margin:0; }
         <div><p class="kicker">Whole Cake</p><h2 id="cake-h" class="h2">홀케이크 예약</h2></div>
         <p class="desc">제철 과일을 듬뿍 올린 꾸꾸의 수제 케이크, 홀케이크로도 예약하실 수 있어요. 네이버 예약으로 편하게 주문해 주세요.</p>
       </div>
-      <div class="grid4">
-        <figure class="card reveal"><img src="cc-cake-fig.webp" alt="무화과와 타임을 올린 하얀 케이크" width="900" height="1200" loading="lazy" /><figcaption>무화과 케이크</figcaption></figure>
-        <figure class="card reveal"><img src="cc-cake-fruit.webp" alt="단면에 과일이 보이는 과일 케이크" width="900" height="1200" loading="lazy" /><figcaption>과일 케이크</figcaption></figure>
-        <figure class="card reveal"><img src="cc-cake-straw.webp" alt="딸기를 가득 올린 딸기 케이크" width="900" height="1200" loading="lazy" /><figcaption>딸기 케이크</figcaption></figure>
-        <figure class="card reveal"><img src="cc-cake-melon.webp" alt="멜론을 올린 원통형 케이크" width="900" height="1200" loading="lazy" /><figcaption>멜론 케이크</figcaption></figure>
+      <div class="cake-grid">
+        <figure class="reveal"><img src="cc-wc-1.webp" alt="무화과를 가득 올린 하얀 홀케이크" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-2.webp" alt="여러 제철 과일을 올린 홀케이크" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-3.webp" alt="체리를 올린 초콜릿 홀케이크와 조각 케이크" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-4.webp" alt="크림을 올린 구움 케이크" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-5.webp" alt="청포도와 크럼블을 올린 홀케이크" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-6.webp" alt="블루베리를 가득 올린 홀케이크" width="864" height="1536" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-7.webp" alt="망고를 가득 올린 홀케이크" width="864" height="1536" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-8.webp" alt="여러 가지 조각 케이크를 둥글게 모은 모습" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="reveal"><img src="cc-wc-9.webp" alt="딸기 케이크가 가득 진열된 쇼케이스" width="864" height="1536" loading="lazy" /></figure>
       </div>
       <div class="cake-note reveal">
         <div>
@@ -279,13 +321,15 @@ h1,h2,h3,p{ margin:0; }
       <div class="head reveal">
         <p class="kicker">Bake &amp; Gift</p>
         <h2 id="bake-h" class="h2">디저트 및 선물</h2>
-        <p class="desc">에그타르트와 휘낭시에 같은 구움과자도 함께 준비하고 있어요. 리본을 묶은 상자에 담아 선물하기도 좋아요. 단체 주문은 전화로 먼저 문의 부탁드립니다.</p>
-        <div class="cta"><a class="btn" href="tel:07080648511">단체 주문 문의</a></div>
+        <p class="desc">에그타르트와 휘낭시에 같은 구움과자도 함께 준비하고 있어요. 리본을 묶은 상자에 담아 선물하기도 좋아요.</p>
+        <div class="cta"><a class="btn" href="https://m.place.naver.com/restaurant/1326613374/booking" target="_blank" rel="noopener">단체 주문 문의</a></div>
       </div>
       <div class="photos">
-        <figure class="card reveal"><img src="cc-tart.webp" alt="식힘망 위에 놓인 에그타르트" width="900" height="1200" loading="lazy" /><figcaption>에그타르트</figcaption></figure>
-        <figure class="card reveal"><img src="cc-fin.webp" alt="견과를 올려 구운 휘낭시에가 줄지어 놓인 모습" width="900" height="1200" loading="lazy" /><figcaption>휘낭시에</figcaption></figure>
-        <figure class="card reveal"><img src="cc-gift.webp" alt="Thank you 리본으로 묶은 구움과자 상자" width="900" height="1125" loading="lazy" /><figcaption>선물 포장<span>리본을 묶은 구움과자 상자</span></figcaption></figure>
+        <figure class="card reveal"><img src="cc-bake-1.webp" alt="트레이에 가득 구워 낸 에그타르트" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="card reveal"><img src="cc-bake-2.webp" alt="병에 나눠 담은 쿠키" width="864" height="1536" loading="lazy" /></figure>
+        <figure class="card reveal"><img src="cc-bake-3.webp" alt="감사 카드를 올려 포장한 구움과자 상자" width="864" height="1536" loading="lazy" /></figure>
+        <figure class="card reveal"><img src="cc-bake-4.webp" alt="구움과자를 하나씩 담아 줄지어 놓은 상자" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="card reveal"><img src="cc-bake-5.webp" alt="리본을 묶어 포장한 디저트 상자" width="843" height="1124" loading="lazy" /></figure>
       </div>
     </div>
   </section>
@@ -297,10 +341,12 @@ h1,h2,h3,p{ margin:0; }
         <p class="desc">담장 안쪽으로 들어오시면 작은 정원과 야외 테이블이 있어요. 반려동물은 야외 테이블에서 함께하실 수 있어요. 실내 동반은 어렵고 좌석이 다소 적으니 양해 부탁드려요.</p>
       </div>
       <div class="space-grid">
-        <figure class="a reveal"><img src="cc-garden.webp" alt="벽돌 담 앞 초록 원형 테이블과 의자" width="900" height="1200" loading="lazy" /></figure>
-        <figure class="b reveal"><img src="cc-path.webp" alt="하얀 집 옆 붉은 댑싸리가 늘어선 길" width="900" height="1200" loading="lazy" /></figure>
-        <figure class="c reveal"><img src="cc-room.webp" alt="나무 천장 아래 창가 자리" width="640" height="1136" loading="lazy" /></figure>
-        <figure class="d reveal"><img src="cc-night.webp" alt="불이 켜진 밤의 꾸꾸 외관과 WELCOME 간판" width="900" height="1200" loading="lazy" /></figure>
+        <figure class="a reveal"><img src="cc-sp-1.webp" alt="나무 기둥과 높은 천장이 있는 실내 좌석" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="b reveal"><img src="cc-sp-2.webp" alt="커다란 창 아래 나무 테이블 좌석" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="c reveal"><img src="cc-sp-3.webp" alt="담장 사이로 난 꾸꾸 입구와 CAFE 표지판" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="d reveal"><img src="cc-sp-4.webp" alt="정원에 핀 분홍색과 보라색 꽃" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="e reveal"><img src="cc-sp-5.webp" alt="벽돌 담 앞 초록 원형 테이블 위의 커피와 음료" width="843" height="1124" loading="lazy" /></figure>
+        <figure class="f reveal"><img src="cc-sp-6.webp" alt="외벽에 달린 반려견 리드줄 고리와 안내판" width="843" height="1124" loading="lazy" /></figure>
       </div>
     </div>
   </section>
@@ -313,7 +359,7 @@ h1,h2,h3,p{ margin:0; }
         <dl class="info">
           <div><dt>주소</dt><dd>경북 경산시 장산로1길 32<small>대경경산역 2번 출구에서 381m</small></dd></div>
           <div><dt>찾는 법</dt><dd>경산역 뒤편에서 차로 2분, 걸어서 10분 이내예요. 삼성현로에서 오실 땐 '더반(한정식)' 방면으로 쭉 내려오시면 돼요.<small>내비게이션에 주소를 검색하시면 가장 정확하게 안내받으실 수 있어요.</small></dd></div>
-          <div><dt>영업시간</dt><dd><span class="hours"><span>화~토</span><span>10:00 ~ 19:00</span><span>일</span><span>10:00 ~ 17:00</span><span>월</span><span>정기휴무</span></span><small>브런치 라스트오더 화~토 16:00 · 일 15:00</small></dd></div>
+          <div><dt>영업시간</dt><dd><span class="hours"><span>화~일</span><span>10:00 ~ 21:00</span><span>월</span><span>정기휴무</span></span><small>브런치 주문 마감 화~목 16:00 · 금~일 18:00</small></dd></div>
           <div><dt>반려동물</dt><dd>야외 테이블에서 함께하실 수 있어요<small>실내 동반은 어려워요</small></dd></div>
           <div><dt>전화</dt><dd><a href="tel:07080648511">070-8064-8511</a></dd></div>
         </dl>
