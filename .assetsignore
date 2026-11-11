@@ -10,3 +10,5 @@ img/**
 index_*.html
 _deploy
 _deploy/**
+_old
+_old/**
